@@ -3,56 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuck Drake City</title>
+    <title>Official Website - Fuck Drake City</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #222;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #1DA1F2;
             color: #fff;
-            text-align: center;
+            padding: 40px 20px;
+            position: fixed;
+            height: 100vh;
+            top: 0;
+        }
+        .sidebar h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .sidebar a:hover {
+            color: #E20000;
+            font-weight: 600;
+        }
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
         }
         header {
-            background: #ff0000;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
+            background-color: #002F6C;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
-        .container {
-            padding: 20px;
+        header .tagline {
+            font-size: 20px;
+            font-weight: 400;
+            color: #ddd;
+            margin-top: 10px;
         }
         .card {
-            background: #333;
+            background-color: #333;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #E20000;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+        p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+            color: #ccc;
+        }
+        ul li {
+            margin-bottom: 12px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
             padding: 20px;
-            margin: 10px auto;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 5px 0;
+        }
+        .highlight {
+            color: #E20000; /* Accent color for important sections */
+            font-weight: 700;
+        }
+        .card a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #004c99;
         }
     </style>
 </head>
 <body>
-    <header>Fuck Drake City - Official Website</header>
-    <div class="container">
-        <div class="card">
-            <h2>Welcome to Fuck Drake City</h2>
-            <p>A place, where everyone can hate Drake.</p>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Fuck Drake City</h1>
+        <a href="javascript:void(0)" id="breaking-news-btn">Breaking News</a>
+        <a href="javascript:void(0)" id="highlights-btn">City Highlights</a>
+        <a href="javascript:void(0)" id="events-btn">Events</a>
+        <a href="javascript:void(0)" id="visit-us-btn">Visit Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            Official Website - Fuck Drake City
+            <div class="tagline">The City of Music, Freedom & Culture</div>
+        </header>
+
+        <!-- Default Message -->
+        <div id="default-message" class="card">
+            <p>Follow <strong>@kkendriickk</strong> on Twitter.</p>
         </div>
-        <div class="card">
+
+        <!-- Breaking News -->
+        <div id="breaking-news" class="card" style="display: none;">
+            <h2 class="highlight">Breaking News</h2>
+            <p><strong>Fuck Drake City</strong> has officially been crowned the greatest city in the world. DJ Mustard himself has credited the city's success to the visionary influence of Kendrick Lamar.</p>
+            <p>Stay tuned for more updates on upcoming events, exciting partnerships, and exclusive news!</p>
+        </div>
+
+        <!-- City Highlights -->
+        <div id="city-highlights" class="card" style="display: none;">
             <h2>City Highlights</h2>
             <ul>
-                <li>The "DAMN." Museum - Showcasing the city's rich musical history.</li>
-                <li>HUMBLE Park - A place to relax, vibe, and enjoy the real 213 energy.</li>
-                <li>Not Like Us Arena - Where the biggest battles in music and sports happen.</li>
+                <li><strong>"PRIDE." Museum</strong> – A tribute to the musical legends and cultural icons who shaped the city's identity.</li>
+                <li><strong>tv off Shop</strong> – Your destination for exclusive entertainment products, with a curated selection of the latest and most unique televisions.</li>
+                <li><strong>Not Like Us Arena</strong> – The city's premier arena for live music, esports, and unforgettable performances.</li>
+                <li><strong>MUSTAAAAAAAARD</strong> – The must-visit spot for those who appreciate the finer things in life, especially mustard.</li>
             </ul>
         </div>
-        <div class="card">
-            <h2>Breaking News</h2>
-            <p>Fuck Drake named the greatest city of all time. DJ Mustard says it's because of Kendrick Lamar.</p>
+
+        <!-- Events -->
+        <div id="events" class="card" style="display: none;">
+            <h2>Upcoming Events</h2>
+            <p>Exciting events are happening soon in Fuck Drake City! From musical festivals to sports tournaments, there's always something to look forward to.</p>
+            <p><a href="https://roblox.vercel.app" target="_blank" class="button">Get Directions</a></p>
         </div>
+
+        <!-- Visit Us -->
+        <div id="visit-us" class="card" style="display: none;">
+            <h2>Visit Us</h2>
+            <p>There's no better time than now to explore the vibrant streets and iconic landmarks of Fuck Drake City. Whether you're here for the music, the culture, or the community, you're in for an unforgettable experience.</p>
+            <p><a href="https://roblox.vercel.app" target="_blank" class="button">Get Directions</a></p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Fuck Drake City. All rights reserved.</p>
+            <p>416 Kendrick Lamar St, Fuck Drake City, USA</p>
+        </footer>
     </div>
+
+    <script>
+        // Hide all sections initially
+        const sections = ["breaking-news", "city-highlights", "events", "visit-us"];
+        const defaultMessage = document.getElementById("default-message");
+
+        function hideAllSections() {
+            sections.forEach(sectionId => {
+                document.getElementById(sectionId).style.display = 'none';
+            });
+        }
+
+        // Show content based on sidebar button clicks
+        document.getElementById("breaking-news-btn").onclick = function() {
+            hideAllSections();
+            document.getElementById("breaking-news").style.display = 'block';
+        };
+
+        document.getElementById("highlights-btn").onclick = function() {
+            hideAllSections();
+            document.getElementById("city-highlights").style.display = 'block';
+        };
+
+        document.getElementById("events-btn").onclick = function() {
+            hideAllSections();
+            document.getElementById("events").style.display = 'block';
+        };
+
+        document.getElementById("visit-us-btn").onclick = function() {
+            hideAllSections();
+            document.getElementById("visit-us").style.display = 'block';
+        };
+
+        // Initially show the default message
+        window.onload = function() {
+            hideAllSections(); // Hide all sections
+            defaultMessage.style.display = 'block'; // Show the default message
+        };
+    </script>
+
 </body>
 </html>
-
-‍
